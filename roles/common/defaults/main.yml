@@ -1,0 +1,12 @@
+---
+phaded_hostname: "phaded.com"
+
+dns_domain: "phaded.com"
+dns_nameservers: ['8.8.8.8','8.8.4.4']
+dns_remove_resolvconf: true
+dns_dhclient_rule: "supersede"
+dns_searchs: 
+  - "{{dns_domain}}"
+
+dns_dhclient_file: "/etc/dhcp/dhclient.conf"
+dns_forced_in_dhclientconf: "{{ansible_os_family == 'Debian' or ansible_os_family == 'Redhat'}}"

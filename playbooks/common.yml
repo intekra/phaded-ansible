@@ -1,0 +1,5 @@
+- name: Install common role 
+  hosts: all 
+  become: yes
+  roles:
+    - common

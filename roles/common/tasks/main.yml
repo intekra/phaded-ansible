@@ -1,2 +1,9 @@
 ---
 - include: hostname.yml
+  tags: hostname
+
+- include: packages.yml
+  tags: packages
+
+- include: resolv.yml
+  tags: resolv

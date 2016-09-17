@@ -1,0 +1,16 @@
+#Group var file for all linux hosts
+
+ssh_users:
+  - name: "intekra"
+    pubkey: 
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDqaVt1dN/NZN3b7kr1v1NvDS0KzES3SP1TZ056aAHTqE6M0yQsoHQHHuvCxllsTIvLX2S22uijY/yZuobFO95p++gHQORlj5EpFwYTkj2iYpsYwf46cEjJ5w2g0nFKDYRny2LPYpL2TMHjB8eczXt+pRYWHKWqRc4qHRsZVVf+cTy4NWipOJ+ZIRXLarTcqLCZvDrQBvzO+sOSsxNk9KT2QEUK8jzFzKJlQHI8Vrg1p7iqhMJTCYDOkl2FUxB+nMVQkePJ1zXGm0hrSl0V7v4AhK3oYpkKJdGxMNSi+MPSzYeeWy4C81ogHs954QLvjHBTo2YZUhfADIcntIlkbAcD intekra@phaded"
+  - name: "jwitkowski"
+    pubkey: 
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdo9TbIvSDlTyjAMkAUpbcwkcpRnx9tAiyfvr4pi30rh9LaZGhUr/GgSVpYIZnHB/eLQhj0khj2CsKorsqU78+Gh+X9uQgWcnEBmsuSbKrMZs/EXa3Sr/qUujDWq96TxJVunOciuvfdt5TWpp7s15JlYkkgJO2WIJMUEHQU4okpkrsT7HLvOKeoHGVEvlG9E6TTmJsD8x4/kmyYRmbqdgl4k0DDaFHYzWojNXE0DStKM1IxTuRbjtkylpNZFEa+gfyo8lawcVFUzfx+nP/tLl+kpEbb9k0Hv87aBesvBOA9AGnXinwfEd8nw2nNVnaa7MwDySw9ab5i240wjSih0Zp jwitkowski@phaded"
+
+ufw_rules:
+  - { port: "22", rule: "allow", proto: "tcp" }
+  - { port: "80", rule: "allow", proto: "tcp" }
+
+ufw_applications:
+  - { name: "OpenSSH" }

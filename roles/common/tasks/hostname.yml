@@ -1,6 +1,6 @@
 ---
 - name: Set correct hostname for server
   hostname:
-    name: "phaded.com"
+    name: "{{ phaded_hostname }}"
 
 

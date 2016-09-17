@@ -1,0 +1,8 @@
+---
+- include: sudo.yml
+  tags: sudo
+
+- include: ssh.yml
+  tags: ssh
+
+

@@ -1,0 +1,7 @@
+---
+- name: Set up passwordless sudo for users
+  lineinfile:
+    dest: "/etc/sudoers"
+    state: present
+    line: "{{ item.name }} ALL=(ALL) NOPASSWD: ALL"
+  with_items: "{{ ssh_users }}"

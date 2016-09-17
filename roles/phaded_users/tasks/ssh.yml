@@ -1,0 +1,38 @@
+---
+- name: ssh.yml | Use single timestamp for sessions to make automated faster/easier 
+  lineinfile: 
+    dest: "/etc/sudoers.d/local-phaded"
+    owner: root 
+    group: root 
+    mode: 0440
+    line: "Defaults    !tty_tickets"
+    state: present
+    create: yes
+
+- name: ssh.yml | Add users on Linux
+  user: 
+    name: "{{ item.name }}"
+    state: present
+    shell: "/bin/bash"
+  with_items: "{{ssh_users}}"
+
+- name: ssh.yml | Add public keys to users authorized_keys file 
+  authorized_key: 
+    user: "{{ item.0.name }}" 
+    key: "{{ item.1 }}"
+  with_subelements:
+    - "{{ ssh_users }}"
+    - pubkey
+
+- name: ssh.yml | Replace sshd_config
+  copy:
+    src: "sshd_config.j2"
+    dest: "/etc/ssh/sshd_config"
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+      - restart ssh
+
+- name: ssh.yml | validate sshd_config
+  command: "/usr/sbin/sshd -t"

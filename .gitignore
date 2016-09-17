@@ -1,0 +1,17 @@
+.tox
+.vagrant/
+*.sw?
+Vagrantfile
+.vault
+inventory/vagrant_ansible_inventory
+*.pyc
+*.vdi
+.DS_Store
+*.out
+.idea/
+
+# Ignore kitchen testing directory
+.kitchen
+
+
+
