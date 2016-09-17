@@ -17,6 +17,7 @@ pip install virtualenv
 virtualenv phaded_repo
 cd /root/phaded_repo
 . ./bin/activate
+rm -rf phaded
 git clone https://github.com/jwitko/phaded.git
 cd phaded
 pip install -r requirements.txt
