@@ -1,0 +1,12 @@
+# Let's pin a version in the short term
+ansible
+# Let's grab latest to ensure bug fixes/features
+ansible-toolkit
+# To run tests locally
+nose
+
+setuptools
+cryptography
+netaddr
+jinja2
+
