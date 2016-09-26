@@ -1,6 +1,10 @@
 ---
 - name: Install common software
-  apt: name={{item}} state=latest update-cache=yes cache_valid_time=864000
+  apt:
+    name: "{{item}}"
+    state: latest
+    update-cache: yes
+    cache_valid_time: 864000
   with_items:
     - htop
     - strace
@@ -18,5 +22,17 @@
     - wget
     - python-pip
     - python-dev
+    - python-pycurl
+    - ipython
     - atop
     - fail2ban
+    - openssl
+    - bash
+    - libssl-dev
+    - libssl-doc
+
+- name: Upgrade PIP
+  pip:
+    name: "pip"
+    state: "latest"
+

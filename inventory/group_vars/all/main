@@ -11,6 +11,7 @@ ssh_users:
 ufw_rules:
   - { port: "22", rule: "allow", proto: "tcp" }
   - { port: "80", rule: "allow", proto: "tcp" }
+  - { port: "443", rule: "allow", proto: "tcp" }
 
 ufw_applications:
   - { name: "OpenSSH" }

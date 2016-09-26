@@ -1,0 +1,12 @@
+---
+
+- name: Provision a {{ application_name }} web server
+  hosts: webservers
+  become: yes
+  vars:
+    - update_apt_cache: yes
+  roles:
+    - common
+    - certbot
+    - web
+    - nginx

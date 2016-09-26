@@ -1,0 +1,9 @@
+---
+- name: Install additional packages
+  apt: 
+    name: "{{ item }}"
+    update_cache: "{{ update_apt_cache }}"
+    force: yes
+    state: latest
+  with_items:
+    - libav-tools

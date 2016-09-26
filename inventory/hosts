@@ -1,2 +1,10 @@
 [jenkins]
 phaded.com
+
+[webservers]
+phaded.com
+
+[dbservers]
+phaded.com
+
+
